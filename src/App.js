@@ -218,9 +218,7 @@ class App extends React.Component {
 const AuthRoute = ({ component: Component, ...rest }) => {
   const token = document.cookie;
   //debugger;
-  console.log(rest.loggedIn);
   if (rest.loggedIn && token === "") rest.logout();
-  console.log("yesA");
   //debugger;
   return (
     <Route
