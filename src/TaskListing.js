@@ -33,7 +33,10 @@ class TaskListing extends React.Component {
   handleChange(event) {
     console.log(event.target);
     //debugger;
-    this.setState({ [event.target.name]: event.target.value }, this.getInfo);
+    this.setState(
+      { [event.target.name]: event.target.value, page: 1 },
+      this.getInfo
+    );
   }
 
   render() {
