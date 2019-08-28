@@ -20,6 +20,7 @@ import AddTask from "./AddTask";
 import { Navbar, NavItem } from "react-materialize";
 import { connect } from "react-redux";
 import * as actionCreators from "./actions/actions";
+import Pusher from "./Pusher";
 
 class App extends React.Component {
   render() {
