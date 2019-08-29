@@ -17,7 +17,6 @@ class Register extends React.Component {
   }
 
   handleChange(event) {
-    //console.log(event.target.value.name);
     this.setState({ [event.target.name]: event.target.value });
   }
 
