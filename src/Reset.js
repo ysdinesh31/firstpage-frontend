@@ -30,7 +30,12 @@ class Reset extends React.Component {
       >
         <label>
           Password:
-          <input type="Password" name="password" onChange={this.handleChange} />
+          <input
+            type="Password"
+            name="password"
+            minlength="8"
+            onChange={this.handleChange}
+          />
         </label>
         <br />
         <label>
@@ -38,6 +43,7 @@ class Reset extends React.Component {
           <input
             type="Password"
             name="Confirm_Password"
+            minlength="8"
             onChange={this.handleChange}
           />
         </label>

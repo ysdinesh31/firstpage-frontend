@@ -122,7 +122,7 @@ class TaskListing extends React.Component {
                         index.createdby.id === this.props.id && (
                           <Button
                             waves="light"
-                            small
+                            small="true"
                             style={{ marginRight: "5px" }}
                             onClick={() => this.onDelete(index.id)}
                           >

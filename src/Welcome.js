@@ -9,11 +9,14 @@ import { connect } from "react-redux";
 import { Row, Col, Preloader } from "react-materialize";
 import ReactHighcharts from "react-highcharts";
 import * as actionCreators from "./actions/actions";
+import { pusher } from "./Pusher";
 
 const config1 = {
   chart: {
+    plotBackgroundColor: null,
     backgroundColor: "rgb(196, 196, 228)",
-
+    plotBorderWidth: null,
+    plotShadow: false,
     type: "pie"
   },
   title: {
@@ -118,6 +121,14 @@ class Welcome extends React.Component {
             }
           }
         );
+
+        var channel = pusher.subscribe(
+          "private-TaskCreateChannel." + Response.data.user.id
+        );
+
+        channel.bind("App\\Events\\TaskCreateEvent", () => {
+          console.log("Task Created!");
+        });
       })
       .catch(error => {
         console.log(error);
@@ -126,16 +137,11 @@ class Welcome extends React.Component {
           this.props.history.push("/logout");
         }
       });
-
-    //debugger;
-
-    //chart.series[0].setData(adm);
   }
 
   render() {
     //debugger;
     if (this.state.loading) return <Preloader size="big"></Preloader>;
-    console.log(this.props);
     return (
       <div>
         <h3 style={{ textAlign: "center", marginTop: "5%", color: "#00767d" }}>

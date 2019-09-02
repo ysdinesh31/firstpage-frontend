@@ -30,7 +30,6 @@ class Login extends React.Component {
     this.setState({ loading: true }, () => {
       //debugger;
     });
-    //var password = event.target.value;
 
     event.preventDefault();
 
@@ -88,7 +87,6 @@ class Login extends React.Component {
           className="link1"
           style={{ float: "left" }}
         >
-          {" "}
           Submit
         </Button>
         <Preloader
@@ -96,7 +94,7 @@ class Login extends React.Component {
           flashing
           active={this.state.loading}
           size="small"
-          style={{ height: "25px", width: "25px", marginTop: "10px" }}
+          style={{ height: "36px", width: "36px", marginTop: "10px" }}
         />
         <Link to="/register">
           <Button className="link1">Sign up at...</Button>
