@@ -127,7 +127,7 @@ class Welcome extends React.Component {
         );
 
         channel.bind("App\\Events\\TaskCreateEvent", () => {
-          console.log("Task Created!");
+          alert("New Task Assigned!");
         });
       })
       .catch(error => {
